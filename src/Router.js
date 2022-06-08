@@ -14,8 +14,8 @@ class Routers extends Component {
                 <Footer/>
                 <div>
                     <Routes>
-                        <Route exact path='/' element={Login}/>
-                        <Route path='/dashboard/:id' element={Dashboard}/>
+                        <Route exact path='/' element={<Login/>}/>
+                        <Route path='/dashboard/:id' element={<Dashboard/>}/>
                         <Route path="*" element={<ErrorPage/>}/>
                     </Routes>
                 </div>
