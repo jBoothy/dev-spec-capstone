@@ -1,5 +1,6 @@
 /* LOGO CSS */
 .logoImage{
+    display: grid;
     width: 150px;
     align-items: center;
     justify-content: center;

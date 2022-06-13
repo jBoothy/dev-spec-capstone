@@ -5,9 +5,12 @@ import './dashboard.css';
 
 class Dashboard extends Component {
   render() {
-    return <div> <HomeButton/><div className='mainBody'>
-    <Link className='defaultBtn' to="/login/"> Rep Login </Link>
-    <Link className='defaultBtn' to="/contact/"> Contact </Link>
+    return <div> <HomeButton/>
+    <div className='mainBody'>
+    <Link className='defaultBtn' to="/addNewCustomer"> Add New Customer </Link>
+    <Link className='defaultBtn' to="/customerList"> Customer List </Link>
+    <Link className='defaultBtn' to="/contact"> Contact </Link>
+    <Link className='defaultBtn' to="/app"> App Download </Link>
     </div></div>;
   }
 }
