@@ -18,7 +18,7 @@ const Dashboard = () => {
       <div> 
       <HomeButton/>
       <div className='mainBody'>
-      <Link className='defaultBtn' to="/addNewCustomer"> Add New Customer </Link>
+      <Link className='defaultBtn' to="/addcustomer"> Add Customer </Link>
       <Link className='defaultBtn' to="/customerList"> Customer List </Link>
       <Link className='defaultBtn' to="/contact"> Contact </Link>
       <Link className='defaultBtn' to="/profile"> Profile </Link>

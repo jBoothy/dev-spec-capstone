@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import HomeButton from "../homeButton/homeButton";
+import './ErrorPage.css';
 
 class ErrorPage extends Component {
   render() {
     return <div>
     <HomeButton/>
-    <h1>ERROR 404: PAGE DOES NOT EXIST</h1></div>;
+    <div className="mainBody">
+    <h1>Sorry, this page doesn't seem to exist. Click the logo to return to the dashboard.</h1>
+    </div>
+    </div>;
   }
 }
 

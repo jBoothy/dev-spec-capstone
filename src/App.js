@@ -6,6 +6,9 @@ import Dashboard from "./components/dashboard/dashboard";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Profile from "./components/Profile/Profile";
+import Contact from "./components/Contact/Contact";
+import AddCustomer from "./components/AddCustomer/AddCustomer";
+import CustomerList from "./components/CustomerList/CustomerList";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Spinner from "./components/Spinner/Spinner";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -27,9 +30,12 @@ function App() {
     <Footer/>
     <div>
       <Routes>
+        <Route path="/" element={<Dashboard/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
-        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/addcustomer" element={<AddCustomer/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/customerlist" element={<CustomerList/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
