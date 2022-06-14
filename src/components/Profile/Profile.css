@@ -1,0 +1,9 @@
+.profileDiv{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+img{
+    width: 250px;
+}

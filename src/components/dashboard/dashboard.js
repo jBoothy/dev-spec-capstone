@@ -1,15 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 import HomeButton from "../homeButton/homeButton";
 import LogoutBtn from "../Logout/Logout";
 import './dashboard.css';
+import Spinner from "../Spinner/Spinner";
 
 const Dashboard = () => {
   const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <div><Spinner/></div>;
   }
 
     return (
