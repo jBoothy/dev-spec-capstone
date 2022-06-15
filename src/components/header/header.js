@@ -1,14 +1,17 @@
-import React, { Component } from "react";
+import * as React from "react";
+import BackgroundLetterAvatars from "./BackgroundLetterAvatars/BackgroundLetterAvatars";
 import './header.css';
 
-class Header extends Component {
-  render() {
-    return <div>
-            <nav className="nav-content">
-            <div className="menu-list"></div>
-            </nav>
-          </div>;
-  }
+const Header=()=> {
+
+  return <div>
+    <nav className="nav-content">
+      <h1>JB Designs</h1>
+      <div className="menu-list">
+        <BackgroundLetterAvatars/>
+      </div>
+    </nav>
+    </div>;
 }
 
 export default Header;

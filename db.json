@@ -1,0 +1,32 @@
+{
+    "reps": [
+        {
+            "rep-id": 1,
+            "rep-first-name": "John",
+            "rep-last-name": "Booth"
+        },
+        {
+            "rep-id": 2,
+            "rep-first-name": "Cassidy",
+            "rep-last-name": "Booth"
+        }
+    ],
+    "customers": [
+        {
+            "customer-id": 1,
+            "customer-first-name": "Bailey",
+            "customer-last-name": "Haskell",
+            "customer-address": "867 N 5309 E Tyler, TX",
+            "customer-paid": false,
+            "customer-installed": true
+        },
+        {
+            "customer-id": 1,
+            "customer-first-name": "Ronni",
+            "customer-last-name": "Volesenko",
+            "customer-address": "694 S 200 E Rust, WA",
+            "customer-paid": true,
+            "customer-installed": true
+        }
+    ]
+}

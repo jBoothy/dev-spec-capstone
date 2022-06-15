@@ -1,0 +1,26 @@
+.contactBody{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    color: black;
+}
+h1{
+    justify-content: center;
+    font-size: 48px;
+    padding-top: 35px;
+}
+.links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+p{
+    display: flex;
+    justify-content: center;
+    font-size: 29px;
+
+}

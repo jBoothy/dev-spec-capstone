@@ -1,14 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from "./components/header/header";
+import HeaderLogin from "./components/HeaderLogin/header";
 import Footer from "./components/footer/footer";
-import Dashboard from "./components/dashboard/dashboard";
+import Dashboard from "./components/Dashboard/dashboard";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
-import Profile from "./components/Profile/Profile";
-import Contact from "./components/Contact/Contact";
-import AddCustomer from "./components/AddCustomer/AddCustomer";
-import CustomerList from "./components/CustomerList/CustomerList";
+import Profile from "./components/Dashboard/Profile/Profile";
+import Contact from "./components/Dashboard/Contact/Contact";
+import AddCustomer from "./components/Customers/AddCustomer/AddCustomer";
+import CustomerList from "./components/Customers/CustomerList";
+import CustomerProfile from "./components/Customers/CustomerProfile/CustomerProfile";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Spinner from "./components/Spinner/Spinner";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -36,6 +38,7 @@ function App() {
         <Route path="/addcustomer" element={<AddCustomer/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/customerlist" element={<CustomerList/>}/>
+        <Route path="/customerprofile" element={<CustomerProfile/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
@@ -45,7 +48,7 @@ function App() {
     )
   } else{
     return <div className="parentDiv">
-    <Header/>
+    <HeaderLogin/>
     <img className='logoImage' src="https://cdn.dribbble.com/users/3137340/screenshots/7105510/artboard_12_copy_10-100_4x.jpg" alt='...'/>
   
     <div className="loginDiv">
