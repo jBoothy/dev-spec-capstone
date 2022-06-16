@@ -17,6 +17,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import TextField from '@mui/material/TextField';
+import '../../../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -123,7 +124,8 @@ export default function CustomPaginationActionsTable() {
       <div className='searchBar'>
         <TextField id="outlined-search" label="Search field" type="search" />
       </div>
-      <Table sx={{ minWidth: 500 }} aria-label="custom pagination table; customized table">
+      <div className='table-responsive'>
+      <Table sx={{ minWidth: 500 }} aria-label="custom pagination table; customized table" className='table'>
         <TableHead>
         <TableRow>
             <StyledTableCell>Name</StyledTableCell>
@@ -188,6 +190,7 @@ export default function CustomPaginationActionsTable() {
           </TableRow>
         </TableFooter>
       </Table>
+      </div>
     </TableContainer>
   );
 }

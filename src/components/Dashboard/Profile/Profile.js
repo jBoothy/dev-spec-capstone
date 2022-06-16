@@ -15,9 +15,9 @@ const Profile = () => {
       <HomeButton/>
         <div className="child">
           <div className="profileDiv">
-            <img src={user.picture} alt={user.name} />
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
+            <img className="profilePicture" src={user.picture} alt={user.name} />
+            <h2 className="profileName">{user.name}</h2>
+            <p className="profileEmail">{user.email}</p>
           </div>
         </div>
       </div>

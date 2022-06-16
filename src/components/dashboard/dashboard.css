@@ -1,11 +1,14 @@
 /* BODY CSS */
 .mainBody {
+  display: grid;
+  grid-template-columns: repeat(min-width, 200px) 20%;
     margin: 5%;
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
     justify-content: center;
     position: relative;
-    flex-wrap: wrap;
+    gap: 43px;
+    /* flex-wrap: wrap; */
   }
 /* BODY CSS */
 

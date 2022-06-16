@@ -14,6 +14,7 @@ import CustomerProfile from "./components/Customers/CustomerProfile/CustomerProf
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Spinner from "./components/Spinner/Spinner";
 import { useAuth0 } from '@auth0/auth0-react';
+import './App.css';
 
 function App() {
   const { isLoading, isAuthenticated, error, loginWithRedirect } = useAuth0();
@@ -29,7 +30,6 @@ function App() {
       <div className="App">
     <Router>
     <Header/>
-    <Footer/>
     <div>
       <Routes>
         <Route path="/" element={<Dashboard/>}/>
@@ -43,6 +43,7 @@ function App() {
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </div>
+    <Footer/>
     </Router>
     </div>
     )

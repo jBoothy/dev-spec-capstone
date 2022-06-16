@@ -4,6 +4,7 @@
     background: #12151c;
     font-family: "Poppins", sans-serif;
     width: 100%;
+    z-index: 1010;
   }
   
   .menu-list {

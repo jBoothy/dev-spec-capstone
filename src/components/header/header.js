@@ -1,6 +1,5 @@
 import * as React from "react";
 import BackgroundLetterAvatars from "./BackgroundLetterAvatars/BackgroundLetterAvatars";
-import './header.css';
 
 const Header=()=> {
 

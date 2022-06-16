@@ -1,10 +1,30 @@
-.nav-content {
+/* START BODY */
+* {
+    margin: 0;
+  }
+  html {
+    height: 100%;
+  }
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -142px; 
+  }
+  .page-wrap:after {
+    content: "";
+    display: block;
+  }
+
+/* END BODY */
+/* START HEADER */
+  .nav-content {
     display: inline-block;
     align-items: center;
     background: #12151c;
     font-family: "Poppins", sans-serif;
     width: 100%;
     color: white;
+    z-index: 1010;
   }
   
   .menu-list {
@@ -47,3 +67,21 @@
     color: white;
     z-index: 1001;
   }
+/* END HEADER */
+
+/* START FOOTER */
+  .site-footer, .page-wrap:after {
+    height: 102px; 
+  }
+  .site-footer {
+    background-color: #12151c;
+    color: white;
+    text-align: center;
+    z-index: 1010;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+  }
+/* END FOOTER */
+
