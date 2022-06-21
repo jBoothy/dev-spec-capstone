@@ -5,6 +5,7 @@ import './FormPropsTextFields.css';
 
 export default function FormPropsTextFields() {
   return (
+    <div className='mainBody'>
     <Box
       component="form"
       sx={{
@@ -52,5 +53,6 @@ export default function FormPropsTextFields() {
         />
       </div>
     </Box>
+    </div>
   );
 }

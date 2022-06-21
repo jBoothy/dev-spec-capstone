@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme, styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -32,6 +32,34 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 function TablePaginationActions(props) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
+  const [customers, setCustomers] = useState(false);
+  useEffect(() => {
+    getCustomers();
+  }, []);
+
+  function getCustomers() {
+    fetch('http://localhost:3001')
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        setCustomers(data);
+      });
+  }
+
+  function deleteCustomers() {
+    let id = prompt('Enter merchant id');
+    fetch(`http://localhost:3001/customers/${id}`, {
+      method: 'DELETE',
+    })
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        alert(data);
+        getCustomers();
+      });
+  }
 
   const handleFirstPageButtonClick = (event) => {
     onPageChange(event, 0);
@@ -90,16 +118,17 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-function createData(name, address, number, paid, installed, rep) {
-  return { name, address, paid, number, installed, rep };
+function createData(firstname, lastname, address, number, paid, installed, rep) {
+  return { firstname, lastname, address, paid, number, installed, rep};
 }
 
 const rows = [
-  createData('Bailey Haskell', '867 N 5309 E Tyler, TX', '866-456-9876', 'No', 'Yes', "John"),
-  createData('Ronni Volesenko', '694 S 200 E Rust, WA', '999-867-5309', 'Yes', 'No', "John"),
-  createData('Rick Oss', '4567 W 656 S Salem, UT', '801-636-5667', 'Yes', 'Yes', "Cassidy"),
-  createData('Victor Cruz', '567 St. New York', '564-123-4567', 'No', 'No', "John"),
-  createData('Johnny Depp', '103 Amber Ln Hollywood, California', '987-654-3210', 'Yes', 'Yes', "Cassidy")
+  
+  createData('Bailey', 'Haskell', '867 N 5309 E Tyler, TX', '866-456-9876', 'No', 'Yes', "John Booth"),
+  createData('Ronni', 'Volesenko', '694 S 200 E Rust, WA', '999-867-5309', 'Yes', 'No', "John Booth"),
+  // createData('Rick Oss', '4567 W 656 S Salem, UT', '801-636-5667', 'Yes', 'Yes', "Cassidy"),
+  // createData('Victor Cruz', '567 St. New York', '564-123-4567', 'No', 'No', "John"),
+  // createData('Johnny Depp', '103 Amber Ln Hollywood, California', '987-654-3210', 'Yes', 'Yes', "Cassidy")
 ].sort((a, b) => (a.name < b.name ? -1 : 1));
 
 export default function CustomPaginationActionsTable() {
@@ -143,7 +172,7 @@ export default function CustomPaginationActionsTable() {
           ).map((row) => (
             <TableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                {row.firstname} {row.lastname}
               </StyledTableCell>
               <StyledTableCell style={{ width: 300 }} align="right">
                 {row.address}

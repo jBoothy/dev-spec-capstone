@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from "./components/header/header";
 import HeaderLogin from "./components/HeaderLogin/header";
-import Footer from "./components/footer/footer";
 import Dashboard from "./components/Dashboard/dashboard";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
@@ -43,7 +42,7 @@ function App() {
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </div>
-    <Footer/>
+
     </Router>
     </div>
     )
@@ -55,27 +54,8 @@ function App() {
     <div className="loginDiv">
     <button className="defaultBtn" onClick={() => loginWithRedirect()}>Log In</button>
     </div>;
-    <Footer/>
     </div>
   }
-
-  // return (
-  //   <div className="App">
-  //   <Router>
-  //   <Header/>
-  //   <Footer/>
-  //   <div>
-  //     <Routes>
-  //       <Route path="/" element={<Login/>}/>
-  //       <Route path="/signup" element={<Signup/>}/>
-  //       <Route path="/dashboard" element={<Dashboard/>}/>
-  //       <Route path="/profile" element={<Profile/>}/>
-  //       <Route path="*" element={<ErrorPage/>}/>
-  //     </Routes>
-  //   </div>
-  //   </Router>
-  //   </div>
-  // );
 }
 
 export default App;

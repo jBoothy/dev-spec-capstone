@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
+
+// const express = require('express');
+// const app = express();
+
+// app.listen(5151, ()=>{
+//   console.log('Server running on port: 5151')
+// })
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

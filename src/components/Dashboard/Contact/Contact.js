@@ -14,7 +14,7 @@ const Contact=()=> {
 
 
     return ( isAuthenticated && (
-    <div><HomeButton/>
+    <div className="mainBody"><HomeButton/>
       <div className="contactBody">
         <h1> Contact </h1>
         <p>
