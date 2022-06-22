@@ -18,7 +18,8 @@
             "customer-last-name": "Haskell",
             "customer-address": "867 N 5309 E Tyler, TX",
             "customer-paid": false,
-            "customer-installed": true
+            "customer-installed": true,
+            "rep": "John Booth"
         },
         {
             "customer-id": 1,
@@ -26,7 +27,8 @@
             "customer-last-name": "Volesenko",
             "customer-address": "694 S 200 E Rust, WA",
             "customer-paid": true,
-            "customer-installed": true
+            "customer-installed": true,
+            "rep": "John Booth"
         }
     ]
 }

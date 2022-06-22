@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React/*, { useState, useEffect }*/ from 'react';
 import PropTypes from 'prop-types';
 import { useTheme, styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -19,6 +19,7 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import TextField from '@mui/material/TextField';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
 
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
@@ -32,34 +33,34 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 function TablePaginationActions(props) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
-  const [customers, setCustomers] = useState(false);
-  useEffect(() => {
-    getCustomers();
-  }, []);
+  // const [customers, setCustomers] = useState(false);
+  // useEffect(() => {
+  //   getCustomers();
+  // }, []);
 
-  function getCustomers() {
-    fetch('http://localhost:3001')
-      .then(response => {
-        return response.text();
-      })
-      .then(data => {
-        setCustomers(data);
-      });
-  }
+  // function getCustomers() {
+  //   fetch('http://localhost:3000')
+  //     .then(response => {
+  //       return response.text();
+  //     })
+  //     .then(data => {
+  //       setCustomers(data);
+  //     });
+  // }
 
-  function deleteCustomers() {
-    let id = prompt('Enter merchant id');
-    fetch(`http://localhost:3001/customers/${id}`, {
-      method: 'DELETE',
-    })
-      .then(response => {
-        return response.text();
-      })
-      .then(data => {
-        alert(data);
-        getCustomers();
-      });
-  }
+  // function deleteCustomers() {
+  //   let id = prompt('Enter merchant id');
+  //   fetch(`http://localhost:3001/customers/${id}`, {
+  //     method: 'DELETE',
+  //   })
+  //     .then(response => {
+  //       return response.text();
+  //     })
+  //     .then(data => {
+  //       alert(data);
+  //       getCustomers();
+  //     });
+  // }
 
   const handleFirstPageButtonClick = (event) => {
     onPageChange(event, 0);
@@ -151,10 +152,11 @@ export default function CustomPaginationActionsTable() {
   return (
     <TableContainer component={Paper}>
       <div className='searchBar'>
-        <TextField id="outlined-search" label="Search field" type="search" />
+        <TextField id="outlined-search" label="Search customer" type="search"/>
       </div>
       <div className='table-responsive'>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table; customized table" className='table'>
+      <div className='tableDisplay'>
         <TableHead>
         <TableRow>
             <StyledTableCell>Name</StyledTableCell>
@@ -191,7 +193,6 @@ export default function CustomPaginationActionsTable() {
               </StyledTableCell>
             </TableRow>
           ))}
-
           {emptyRows > 0 && (
             <TableRow style={{ height: 53 * emptyRows }}>
               <StyledTableCell colSpan={6} />
@@ -218,6 +219,7 @@ export default function CustomPaginationActionsTable() {
             />
           </TableRow>
         </TableFooter>
+        </div>
       </Table>
       </div>
     </TableContainer>
