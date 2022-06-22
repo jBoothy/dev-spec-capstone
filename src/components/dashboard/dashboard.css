@@ -1,12 +1,12 @@
 /* BODY CSS */
 .mainBody {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 25px;
-    margin-right: 25px;
-    gap: 25px;
-    margin-bottom: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  gap: 25px;
+  margin-bottom: 25px;
   }
 /* BODY CSS */
 

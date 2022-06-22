@@ -49,7 +49,6 @@ export default function ValidationTextFields() {
           onChange={(event)=>{
             setFirstname(event.target.value)
           }}
-          // defaultValue="Hello World"
         />
       </div>
       <div>
@@ -60,7 +59,6 @@ export default function ValidationTextFields() {
           onChange={(event)=>{
             setLastname(event.target.value)
           }}
-          // defaultValue="Hello World"
         />
       </div>
       <div>
@@ -71,7 +69,6 @@ export default function ValidationTextFields() {
           onChange={(event)=>{
             setAddress(event.target.value)
           }}
-          // defaultValue="Hello World"
         />
       </div>
       <div>
@@ -82,7 +79,6 @@ export default function ValidationTextFields() {
           onChange={(event)=>{
             setPhoneNumber(event.target.value)
           }}
-          // defaultValue="Hello World"
         />
       </div>
       <div>
@@ -127,7 +123,6 @@ export default function ValidationTextFields() {
           onChange={(event)=>{
             setRep(event.target.value)
           }}
-          // defaultValue="Hello World"
         />
       </div>
     </Box>
