@@ -67,7 +67,7 @@ export default function ValidationTextFields() {
           id="outlined-error"
           label="Customer Address"
           onChange={(event)=>{
-            setAddress(event.target.value) 
+            setAddress(event.target.value)
           }}
         />
       </div>
