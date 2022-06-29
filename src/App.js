@@ -15,6 +15,7 @@ import Spinner from "./components/Spinner/Spinner";
 import { useAuth0 } from '@auth0/auth0-react';
 import './App.css';
 
+
 function App() {
   const { isLoading, isAuthenticated, error, loginWithRedirect } = useAuth0();
   if(isLoading){
@@ -37,7 +38,7 @@ function App() {
         <Route path="/addcustomer" element={<AddCustomer/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/customerlist" element={<CustomerList/>}/>
-        <Route path="/customerprofile" element={<CustomerProfile/>}/>
+        <Route path="/customerprofile/:id" element={<CustomerProfile/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
