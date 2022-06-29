@@ -82,7 +82,6 @@ export default function CustomerProfile() {
     e.preventDefault();
     axios.put(`/api/customers/${id}`, c).then((res) => {
       console.log(res);
-      // Make input fields uneditable after submit
       setC({
         firstname: "",
         lastname: "",
