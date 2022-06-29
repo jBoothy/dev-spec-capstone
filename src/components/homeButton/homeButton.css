@@ -9,7 +9,14 @@
     font-size: 12px;
     width: 150px;
     vertical-align: middle;
+    /* justify-content: center; */
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    /* margin-left: 25px; */
+    margin-right: 25px;
+    gap: 25px;
+    margin-bottom: 25px;
   }
   .nav-logo {
     width: 10.5%;

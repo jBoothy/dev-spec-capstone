@@ -29,10 +29,22 @@ The idea behind my capstone is to allow sals reps to log in to their accounts, a
 <li> Stores values on state </li>
 <li> Uses values from state to display information and/or make requests </li>
 <li> Custom styling - Done </li>
+
 <h3> Server: </h3>
 <li> Handles requests </li>
 <li> Sends responses </li>
+
 <h3> Database: </h3>
 <li> Tables contain data </li>
 <li> Connects to server </li>
 
+# To Add
+
+<h3> Front-End: </h3>
+<li> More Pages to navigate to </li>
+<li> Cleaned up interface/little bit better mobile friendly </li>
+
+<h3> Back-End: </h3>
+<li> Rep ID attached to their individual customers (should be fairly simple) </li>
+<li> Payment processing </li>
+<li> Permissions for different employee hierarchy (IT, Payroll, HR, Sales, etc.) </li>

@@ -54,7 +54,14 @@ export default class ValidationTextFields extends Component {
     axios.post("/api/customers", this.state)
     .then(res => {
       console.log(res)
-      document.querySelectorAll('outlined-basic1, outlined-basic2, outlined-basic3, outlined-basic4, outlined-basic5').value=null;
+      // Reset input fields to empty after submit
+      this.setState({
+        firstname: "",
+        lastname: "",
+        address: "",
+        phonenumber: "",
+        rep: ""
+      })
       toast.success('Customer added successfully!', {
         position: "bottom-center",
         autoClose: 5000,
