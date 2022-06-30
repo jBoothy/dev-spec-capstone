@@ -6,6 +6,7 @@ import LogoutBtn from "./Logout/Logout";
 import './dashboard.css';
 import Spinner from "../Spinner/Spinner";
 
+
 const Dashboard = () => {
   const { isAuthenticated, isLoading } = useAuth0();
 
@@ -23,6 +24,8 @@ const Dashboard = () => {
       <Link className='defaultBtn' to="/profile"> Profile </Link>
       <Link className='defaultBtn' to="/app"> App Download </Link>
       <Link className='defaultBtn' to="/contact"> Contact </Link>
+      <Link className='defaultBtn' to="/addrep"> Add Rep </Link>
+      <Link className='defaultBtn' to="/repList"> Rep List </Link>
       <LogoutBtn/>
       </div></div>
     ))
