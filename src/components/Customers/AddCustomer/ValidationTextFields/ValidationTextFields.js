@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { TextField } from "@mui/material";
+import { TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import './ValidationTextFields.css';
@@ -17,7 +17,8 @@ export default class ValidationTextFields extends Component {
       phonenumber: "",
       rep: ""
     }
-  }
+}
+
 
   onFNChange = (e) => {
     this.setState({
@@ -105,9 +106,25 @@ export default class ValidationTextFields extends Component {
         <TextField id="outlined-basic2" label="Last Name" variant="outlined" value={this.state.lastname} onChange={this.onLNChange} required/>
         <TextField id="outlined-basic3" label="Address" variant="outlined" value={this.state.address} onChange={this.onAChange} required/>
         <TextField id="outlined-basic4" label="Phone Number" variant="outlined" value={this.state.phonenumber} onChange={this.onPNChange} required/>
-        <TextField id="outlined-basic5" label="Rep Name" variant="outlined" value={this.state.rep} onChange={this.onRChange} required/>
-        <Button className="defaultBtn" type="submit" onClick={ this.handleSubmit }>Submit</Button>
-      </Box>
+        <FormControl variant="outlined" className="formControl">
+          <InputLabel id="demo-simple-select-outlined-label">Rep</InputLabel>
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            value={this.state.rep}
+            onChange={this.onRChange}
+            label="Rep"
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={1}>Rep 1</MenuItem>
+            <MenuItem value={2}>Rep 2</MenuItem>
+            <MenuItem value={3}>Rep 3</MenuItem>
+          </Select>
+        </FormControl>
+          <Button className="defaultBtn" type="submit" onClick={ this.handleSubmit }>Submit</Button>
+        </Box>
         <ToastContainer
           position="bottom-center"
           autoClose={5000}

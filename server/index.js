@@ -110,6 +110,53 @@ app.delete('/api/customers/:id', (req, res)=>{
     client.end;
 })})
 
+// Post for Add Rep
+app.post('/api/reps', jsonParser, (req, res)=>{
+    client.query(`
+    INSERT INTO reps (firstname, lastname)
+    VALUES ('${req.body.firstname}', '${req.body.lastname}')
+    `, (err, resp)=>{
+      if(!err){
+          res.status(200).send('Success')
+      } else{
+          console.log(err.message)
+      }
+      client.end;
+  })
+})
+
+// Get for Rep List
+app.get('/api/reps', (req, res)=>{
+    client.query(`
+    SELECT * FROM reps
+    ORDER BY firstname DESC
+    `
+    , (err, resp)=>{
+        if(!err){
+            res.status(200).send(resp.rows)
+        } else{
+            console.log(err.message)
+        }
+        client.end;
+    })
+})
+
+// Delete for Rep List
+app.delete('/api/reps/:id', (req, res)=>{
+    // console.log("REQ PARAMS ID ->", req.params.id)
+    let sql = `DELETE FROM reps WHERE id = ${req.params.id}`
+    // console.log('SQL ->', sql)
+    
+    client.query(sql, (err, resp)=>{
+        if(!err){
+            res.status(200).send('Success')
+        } else{
+            console.log(err.message)
+        }
+        client.end;
+})})
+
+
 const port = process.env.PORT || 8675
 
 app.listen(port, ()=>{

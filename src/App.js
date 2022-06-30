@@ -10,6 +10,8 @@ import Contact from "./components/Dashboard/Contact/Contact";
 import AddCustomer from "./components/Customers/AddCustomer/AddCustomer";
 import CustomerList from "./components/Customers/CustomerList";
 import CustomerProfile from "./components/Customers/CustomerProfile/CustomerProfile";
+import AddRep from "./components/reps/AddRep/AddRep";
+import RepList from "./components/reps/RepList/RepList";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Spinner from "./components/Spinner/Spinner";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -40,6 +42,8 @@ function App() {
         <Route path="/customerlist" element={<CustomerList/>}/>
         <Route path="/customerprofile/:id" element={<CustomerProfile/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/addrep" element={<AddRep/>}/>
+        <Route path="/repList" element={<RepList/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </div>
