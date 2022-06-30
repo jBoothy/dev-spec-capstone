@@ -15,21 +15,21 @@ app.use(express.static('../dist'));
 
 app.use(cors())
 // MAC
-// const client = new Client({
-//     host: "localhost",
-//     user: "postgres",
-//     port: 5432,
-//     password: "jcb042915",
-//     database: "postgres"
-// })
-// PC
 const client = new Client({
     host: "localhost",
     user: "postgres",
-    port: 5151,
+    port: 5432,
     password: "jcb042915",
     database: "postgres"
 })
+// PC
+// const client = new Client({
+//     host: "localhost",
+//     user: "postgres",
+//     port: 5151,
+//     password: "jcb042915",
+//     database: "postgres"
+// })
 
 client.connect();
 
@@ -129,7 +129,7 @@ app.post('/api/reps', jsonParser, (req, res)=>{
 app.get('/api/reps', (req, res)=>{
     client.query(`
     SELECT * FROM reps
-    ORDER BY firstname DESC
+    ORDER BY id ASC
     `
     , (err, resp)=>{
         if(!err){
@@ -156,6 +156,40 @@ app.delete('/api/reps/:id', (req, res)=>{
         client.end;
 })})
 
+// Get rep from id for edit rep
+app.get('/api/reps/:id', (req, res)=>{
+    client.query(`SELECT * FROM reps WHERE id = ${req.params.id}`, (err, resp)=>{
+      if(!err){
+          res.status(200).send(resp.rows)
+      } else{
+          console.log(err.message)
+      }
+      client.end;
+  }
+  )
+  }
+    )
+// Put for Rep List
+app.put('/api/reps/:id', jsonParser, (req, res)=>{
+// console.log(req.body)
+let sql = `
+UPDATE reps 
+SET firstname = '${req.body.firstname}', lastname = '${req.body.lastname}'  
+WHERE id = ${req.params.id}
+;`
+console.log('SQL ->', sql)
+
+client.query(sql, (err, resp)=>{
+    if(!err){
+        res.status(200).send('Success')
+    } else{
+        console.log(err.message)
+    }
+    client.end;
+}
+)
+}
+)
 
 const port = process.env.PORT || 8675
 

@@ -1,10 +1,16 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
-import HomeButton from "../homeButton/homeButton";
 import LogoutBtn from "./Logout/Logout";
 import './dashboard.css';
 import Spinner from "../Spinner/Spinner";
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import ViewListIcon from '@mui/icons-material/ViewList';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+import GetAppIcon from '@mui/icons-material/GetApp';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import Divider from "@mui/material/Divider";
 
 
 const Dashboard = () => {
@@ -17,16 +23,26 @@ const Dashboard = () => {
     return (
     isAuthenticated && (
       <div> 
-      <HomeButton/>
       <div className='mainBody'>
-      <Link className='defaultBtn' to="/addcustomer"> Add Customer </Link>
-      <Link className='defaultBtn' to="/customerList"> Customer List </Link>
-      <Link className='defaultBtn' to="/profile"> Profile </Link>
-      <Link className='defaultBtn' to="/app"> App Download </Link>
-      <Link className='defaultBtn' to="/contact"> Contact </Link>
-      <Link className='defaultBtn' to="/addrep"> Add Rep </Link>
-      <Link className='defaultBtn' to="/repList"> Rep List </Link>
-      <LogoutBtn/>
+      
+      
+
+      <Stack className="btnCont" direction="row" spacing={2}>
+        <Button className="btn" variant="contained" href="/addcustomer"><Link to="/addcustomer"><AddCircleOutlineIcon/> Add Customer </Link></Button>
+        <Divider/>
+        <Button className="btn" variant="contained" href="/customerList"><Link to="/customerList"><ViewListIcon/> Customer List </Link></Button>
+        <Divider/>
+        <Button className="btn" variant="contained" href="/addrep"><Link to="/addrep"><AddCircleOutlineIcon/> Add Rep </Link></Button>
+        <Divider/>
+        <Button className="btn" variant="contained" href="/repList"><Link to="/repList"><ViewListIcon/> Rep List </Link></Button>
+        <Divider/>
+        <Button className="btn" variant="contained" href="/Contact"><Link to="/Contact"><ContactPageIcon/> Contact </Link></Button>
+        <Divider/>
+        <Button className="btn" variant="contained" href="/app" disabled><Link to="/app"><GetAppIcon/> App Download </Link></Button>
+        <Divider/>
+        <LogoutBtn/>
+      </Stack>
+
       </div></div>
     ))
   }

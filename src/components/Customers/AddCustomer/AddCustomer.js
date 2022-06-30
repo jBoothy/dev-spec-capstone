@@ -1,5 +1,4 @@
 import React from "react";
-import HomeButton from "../../homeButton/homeButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import Spinner from "../../Spinner/Spinner";
 import ValidationTextFields from "./ValidationTextFields/ValidationTextFields";
@@ -13,7 +12,7 @@ const AddCustomer=()=> {
   }
 
 
-    return (isAuthenticated &&(<div><HomeButton/>
+    return (isAuthenticated &&(<div>
     <div className="mainBody">
     <ValidationTextFields/>
     </div>

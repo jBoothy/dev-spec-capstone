@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import HomeButton from "../../homeButton/homeButton";
 import { Box, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import { ToastContainer, toast } from "react-toastify";
@@ -47,7 +46,7 @@ export default function AddRep() {
   }
 
   return (
-    <div><HomeButton/>
+    <div>
       <Box
       component="form"
       sx={{

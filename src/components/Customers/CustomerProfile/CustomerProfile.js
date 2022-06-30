@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import HomeButton from "../../homeButton/homeButton";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import '../../Customers/AddCustomer/ValidationTextFields/ValidationTextFields.css';
@@ -7,7 +6,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { TextField } from "@mui/material";
+import { TextField, InputLabel, FormControl, MenuItem, Select } from "@mui/material";
 
 export default function CustomerProfile() {
   const { id } = useParams();
@@ -16,7 +15,8 @@ export default function CustomerProfile() {
     lastname: "",
     address: "",
     phonenumber: "",
-    rep: ""
+    rep: "",
+    reps: []
   });
 
   // Have customer information show up on page load
@@ -30,18 +30,8 @@ export default function CustomerProfile() {
         console.log(err);
       }
       );
-  }, []);
+  }, [id]);
 
-  // useEffect(() => {
-  //   axios.get(`/api/customers/${id}`).then((res) => {
-  //     // console.log("RESPONSE FROM GET", res.data);
-  //     setC(res.data);
-  //   }).catch((err) => {
-  //     console.log("Customer not found", err);
-  //   });
-  // }, [id]);
-
-  // Make all input fields change customer information in state
   const onFNChange = (e) => {
     setC({
       ...c,
@@ -103,10 +93,26 @@ export default function CustomerProfile() {
     );
   }
 
+  const [reps, setReps] = React.useState([
+    {
+      reps: []
+    }
+  ]);
+  useEffect(() => {
+    axios.get("/api/reps").then((res) => {
+      setReps(res.data);
+    }
+    ).catch((err) => {
+      console.log("Reps not found", err);
+    }
+    );
+  }
+  , []);
+
+
   return (
 
   <div>
-    <HomeButton/>
       <Box
       component="form"
       sx={{
@@ -120,7 +126,21 @@ export default function CustomerProfile() {
         <TextField id="outlined-basic2" label="Last Name" variant="outlined" value={c.lastname} onChange={onLNChange}/>
         <TextField id="outlined-basic3" label="Address" variant="outlined" value={c.address} onChange={onAChange}/>
         <TextField id="outlined-basic4" label="Phone Number" variant="outlined" value={c.phonenumber} onChange={onPNChange}/>
-        <TextField id="outlined-basic5" label="Rep Name" variant="outlined" value={c.rep} onChange={onRChange}/>
+        <FormControl variant="outlined" className="formControl">
+          <InputLabel id="demo-simple-select-outlined-label">Rep</InputLabel>
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            value={c.rep}
+            onChange={onRChange}
+            label="Rep"
+            required
+          >
+            {reps.map((rep) => (
+              <MenuItem key={rep.id} value={rep.firstname + " " + rep.lastname}>{rep.firstname + " " + rep.lastname}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <Button className="defaultBtn" type="submit" onClick={handleSubmit} >Submit</Button>
       </Box>
     <ToastContainer

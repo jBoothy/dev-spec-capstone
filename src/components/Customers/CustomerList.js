@@ -1,5 +1,4 @@
 import React from "react";
-import HomeButton from "../homeButton/homeButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import Spinner from "../Spinner/Spinner";
 import CustomizedTables from './CustomizedTables/CustomizedTables';
@@ -12,7 +11,7 @@ const CustomerList=()=> {
     return <div><Spinner/></div>;
   }
 
-    return (isAuthenticated &&(<div><HomeButton/>
+    return (isAuthenticated &&(<div>
     <div className="mainBody">
     <CustomizedTables/>
     </div>

@@ -20,7 +20,7 @@
   .nav-content {
     display: inline-block;
     align-items: center;
-    background: #12151c;
+    background: #1976D2;
     font-family: "Poppins", sans-serif;
     width: 100%;
     color: white;
@@ -66,6 +66,8 @@
   h1{
     color: white;
     z-index: 1001;
+    justify-content: center;
+    margin-top: 50px;
   }
 /* END HEADER */
 

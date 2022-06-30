@@ -1,7 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import Spinner from "../../Spinner/Spinner";
-import '../../homeButton/homeButton.css'
+import Button from "@mui/material/Button";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const LogoutBtn = () => {
   const { logout, isLoading } = useAuth0();
@@ -11,9 +12,7 @@ const LogoutBtn = () => {
   }
 
   return (
-    <button className="defaultBtn" onClick={() => logout({ returnTo: window.location.origin })}>
-      Log Out
-    </button>
+    <Button className="btn" variant="contained" onClick={() => logout({ returnTo: window.location.origin })}><LogoutIcon/> Log Out </Button>
   );
 };
 

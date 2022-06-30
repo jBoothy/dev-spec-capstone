@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import Header from "./components/header/header";
 import HeaderLogin from "./components/HeaderLogin/header";
 import Dashboard from "./components/Dashboard/dashboard";
@@ -12,10 +13,12 @@ import CustomerList from "./components/Customers/CustomerList";
 import CustomerProfile from "./components/Customers/CustomerProfile/CustomerProfile";
 import AddRep from "./components/reps/AddRep/AddRep";
 import RepList from "./components/reps/RepList/RepList";
+import EditRep from "./components/reps/EditRep/EditRep";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Spinner from "./components/Spinner/Spinner";
 import { useAuth0 } from '@auth0/auth0-react';
 import './App.css';
+import Button from '@mui/material/Button';
 
 
 function App() {
@@ -32,6 +35,7 @@ function App() {
       <div className="App">
     <Router>
     <Header/>
+      <Breadcrumbs/>
     <div>
       <Routes>
         <Route path="/" element={<Dashboard/>}/>
@@ -44,6 +48,7 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/addrep" element={<AddRep/>}/>
         <Route path="/repList" element={<RepList/>}/>
+        <Route path="/editrep/:id" element={<EditRep/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </div>
@@ -54,10 +59,9 @@ function App() {
   } else{
     return <div className="parentDiv">
     <HeaderLogin/>
-    <img className='logoImage' src="https://cdn.dribbble.com/users/3137340/screenshots/7105510/artboard_12_copy_10-100_4x.jpg" alt='...'/>
   
     <div className="loginDiv">
-    <button className="defaultBtn" onClick={() => loginWithRedirect()}>Log In</button>
+    <Button className="btn" variant="contained" onClick={() => loginWithRedirect()}> Log In </Button>
     </div>;
     </div>
   }

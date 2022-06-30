@@ -15,7 +15,8 @@ export default class ValidationTextFields extends Component {
       lastname: "",
       address: "",
       phonenumber: "",
-      rep: ""
+      rep: "",
+      reps: []
     }
 }
 
@@ -87,6 +88,27 @@ export default class ValidationTextFields extends Component {
     )
   }
 
+  // Get reps from axios call and map through them to create a dropdown menu that renders in the form
+  componentDidMount() {
+    axios.get("/api/reps")
+      .then(res => {
+        this.setState({
+          reps: res.data
+        })
+      }
+      )
+  }
+
+  renderReps = () => {
+    return this.state.reps.map(rep => {
+      return (
+        <MenuItem key={rep.id} value={rep.firstname + " " + rep.lastname}>
+          {rep.firstname} {rep.lastname}
+        </MenuItem>
+      )
+    }
+    )
+  }
 
   render(){
     return (
@@ -114,15 +136,12 @@ export default class ValidationTextFields extends Component {
             value={this.state.rep}
             onChange={this.onRChange}
             label="Rep"
+            required
           >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={1}>Rep 1</MenuItem>
-            <MenuItem value={2}>Rep 2</MenuItem>
-            <MenuItem value={3}>Rep 3</MenuItem>
+            {this.renderReps()}
           </Select>
         </FormControl>
+          
           <Button className="defaultBtn" type="submit" onClick={ this.handleSubmit }>Submit</Button>
         </Box>
         <ToastContainer
@@ -140,3 +159,6 @@ export default class ValidationTextFields extends Component {
       
     )}
 }
+
+
+

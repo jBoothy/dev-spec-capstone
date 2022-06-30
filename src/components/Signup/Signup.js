@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './Signup.css';
-import HomeButton from "../homeButton/homeButton";
 
 class Signup extends Component {
   // constructor(props) {
@@ -24,7 +23,6 @@ class Signup extends Component {
 
   render() {
     return (<div>
-      <HomeButton/>
 
       <div class="login-wrap">
       <div class="login-html">

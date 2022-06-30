@@ -1,6 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
-import HomeButton from "../../homeButton/homeButton";
 import './Profile.css';
 
 const Profile = () => {
@@ -12,7 +11,6 @@ const Profile = () => {
 
   return (
     isAuthenticated && (<div className="parent">
-      <HomeButton/>
         <div className="child">
           <div className="profileDiv">
             <img className="profilePicture" src={user.picture} alt={user.name} />
