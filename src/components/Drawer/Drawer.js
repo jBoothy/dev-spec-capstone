@@ -9,6 +9,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ViewListIcon from '@mui/icons-material/ViewList';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 import { Link } from 'react-router-dom';
 import './Drawer.css';
 
@@ -86,6 +87,19 @@ export default function TemporaryDrawer() {
             </ListItem>
         );
     }
+
+    // render Contact button in drawer that links to contact page
+    const Contact = () => {
+        return (
+            <ListItem button component={Link} to="/Contact">
+                <ListItemIcon>
+                    <ContactPageIcon />
+                </ListItemIcon>
+                <ListItemText primary="Contact" />
+            </ListItem>
+        );
+    }
+
     
 
   const list = (anchor) => (
@@ -102,6 +116,9 @@ export default function TemporaryDrawer() {
         <CustomerList/>
         <AddRep/>
         <RepList/>
+        <Contact/>
+        <Divider/>
+
         </List>
         
     </Box>

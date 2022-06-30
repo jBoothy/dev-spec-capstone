@@ -122,10 +122,10 @@ export default function CustomerProfile() {
       autoComplete="off"
       className="formBox"
       >
-        <TextField id="outlined-basic1" label="First Name" variant="outlined" value={c.firstname} onChange={onFNChange}/>
-        <TextField id="outlined-basic2" label="Last Name" variant="outlined" value={c.lastname} onChange={onLNChange}/>
-        <TextField id="outlined-basic3" label="Address" variant="outlined" value={c.address} onChange={onAChange}/>
-        <TextField id="outlined-basic4" label="Phone Number" variant="outlined" value={c.phonenumber} onChange={onPNChange}/>
+        <TextField id="outlined-basic1" label="First Name" variant="outlined" value={c.firstname} onChange={onFNChange} required/>
+        <TextField id="outlined-basic2" label="Last Name" variant="outlined" value={c.lastname} onChange={onLNChange} required/>
+        <TextField id="outlined-basic3" label="Address" variant="outlined" value={c.address} onChange={onAChange} required/>
+        <TextField id="outlined-basic4" label="Phone Number" variant="outlined" value={c.phonenumber} onChange={onPNChange} required/>
         <FormControl variant="outlined" className="formControl">
           <InputLabel id="demo-simple-select-outlined-label">Rep</InputLabel>
           <Select

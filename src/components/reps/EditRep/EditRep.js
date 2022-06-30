@@ -71,8 +71,8 @@ export default function EditRep() {
         autoComplete="off"
         className="formBox"
         >
-            <TextField id="outlined-basic1" label="First Name" variant="outlined" value={r.firstname} onChange={onFNChange}/>
-            <TextField id="outlined-basic2" label="Last Name" variant="outlined" value={r.lastname} onChange={onLNChange}/>
+            <TextField id="outlined-basic1" label="First Name" variant="outlined" value={r.firstname} onChange={onFNChange} required/>
+            <TextField id="outlined-basic2" label="Last Name" variant="outlined" value={r.lastname} onChange={onLNChange} required/>
             <Button className="btn" type="submit" onClick={handleSubmit} >Submit</Button>
         </Box>
         <ToastContainer

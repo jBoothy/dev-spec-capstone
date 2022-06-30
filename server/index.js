@@ -69,7 +69,7 @@ UPDATE customers
 SET firstname = '${req.body.firstname}', lastname = '${req.body.lastname}', address = '${req.body.address}', rep = '${req.body.rep}', phonenumber = '${req.body.phonenumber}'  
 WHERE id = ${req.params.id}
 ;`
-console.log('SQL ->', sql)
+// console.log('SQL ->', sql)
 
 client.query(sql, (err, resp)=>{
     if(!err){
@@ -177,7 +177,7 @@ UPDATE reps
 SET firstname = '${req.body.firstname}', lastname = '${req.body.lastname}'  
 WHERE id = ${req.params.id}
 ;`
-console.log('SQL ->', sql)
+// console.log('SQL ->', sql)
 
 client.query(sql, (err, resp)=>{
     if(!err){
