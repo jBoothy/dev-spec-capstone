@@ -103,10 +103,12 @@ export default class CustomizedTables extends Component {
                         <StyledTableCell align="right">{c.address}</StyledTableCell>
                         <StyledTableCell align="right">{c.phonenumber}</StyledTableCell>
                         <StyledTableCell align="right">{c.rep}</StyledTableCell>
+                        <StyledTableCell align="right">
                         <Stack className='btnContain' align="right"  spacing={2}>
                           <Link to={'/customerProfile/' + c.id}><Button id='editBtn' variant="outlined" startIcon={<EditIcon/>}>Edit</Button></Link>
                           <Button id='deleteBtn' variant="outlined" startIcon={<DeleteIcon/>} onClick={(e) => this.removeCustomer(e, c.id)}>Delete</Button>
                         </Stack>
+                        </StyledTableCell>
                       </StyledTableRow>
                     ))
 

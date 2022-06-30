@@ -3,12 +3,15 @@ import BackgroundLetterAvatars from "./BackgroundLetterAvatars/BackgroundLetterA
 import './header.css';
 import { Link } from 'react-router-dom';
 import TemporaryDrawer from '../Drawer/Drawer';
+import Typography from "@mui/material/Typography";
 
 const Header=()=> {
 
   return <div>
     <nav className="nav-content"><Link to="/">
-      <h1>JB Designs</h1>
+      <Typography variant="h1" className="nav-title">
+        JB Designs
+      </Typography>
       </Link>
       <TemporaryDrawer/>
       <div className="menu-list">

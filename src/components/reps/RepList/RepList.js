@@ -84,10 +84,12 @@ export default class RepList extends Component {
                           {r.firstname} {r.lastname}
                         </StyledTableCell>
                         <StyledTableCell align="right">{r.id}</StyledTableCell>
+                        <StyledTableCell align="right">
                         <Stack className='btnContain' align="right"  spacing={2}>
                           <Link to={'/editRep/' + r.id}><Button id='editBtn' variant="outlined" startIcon={<EditIcon/>}>Edit</Button></Link>
                           <Button id='deleteBtn' variant="outlined" startIcon={<DeleteIcon/>} onClick={(e) => this.removeRep(e, r.id)}>Delete</Button>
                         </Stack>
+                        </StyledTableCell>
                       </StyledTableRow>
 
         )

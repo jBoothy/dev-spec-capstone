@@ -10,6 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
+import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
 import './Drawer.css';
 
@@ -31,7 +32,7 @@ export default function TemporaryDrawer() {
         return (
             <ListItem button component={Link} to="/">
                 <ListItemIcon>
-                    <ViewListIcon />
+                    <HomeIcon />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
             </ListItem>
