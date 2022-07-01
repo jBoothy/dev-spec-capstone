@@ -1,24 +1,30 @@
 # Capstone || Web Development Spec
-The idea behind my capstone is to allow sals reps to log in to their accounts, add their customer's information and be able to track the order, flag customer's for payment and remove customer's.
+The idea behind my capstone is that sales reps can login to the site, add customers to the company database, view all current customers, edit or delete the customer's information, add new reps to the database and edit or delete the reps information. The idea of the site is to be able to organize and maintain a company's customers and sales reps in real time and dynamically.
 
 # MVP
-<li> Account login - Done </li>
-<li> Users can view their customers </li>
-<li> Users can add comments on customer profiles </li>
-<li> Customers can be added to database where all can be viewable by admins </li>
-<li> Reps can flag customer's accounts that need payment or installation </li>
+<li> Account login </li>
+<li> Reps can view their customers </li>
+<li> Customers can be added and linked with rep </li>
+<li> Customers can be removed </li>
+<li> Customers can be edited </li>
+<li> Reps can be added </li>
+<li> Reps can be removed </li>
+<li> Reps can be edited </li>
 
 # Database
 
-<li> Rep ID</li>
-<li> Rep firstname</li>
-<li> Rep lastname</li>
-<li> Customer ID</li>
-<li> Customer firstname</li>
-<li> Customer lastname</li>
-<li> Customer address</li>
-<li> Customer paid?</li>
-<li> Customer installed?</li>
+<h2>Customer Table:</h2>
+<li>ID</li>
+<li>First Name</li>
+<li>Last Name</li>
+<li>Address</li>
+<li>Phone Number</li>
+<li>Rep (FK)</li>
+
+<h2>Rep Table:</h2>
+<li>ID</li>
+<li>First Name</li>
+<li>Last Name</li>
 
 # Conditionals
 
@@ -28,7 +34,7 @@ The idea behind my capstone is to allow sals reps to log in to their accounts, a
 <li> Has at least 5 components </li>
 <li> Stores values on state </li>
 <li> Uses values from state to display information and/or make requests </li>
-<li> Custom styling - Done </li>
+<li> Custom styling </li>
 
 <h3> Server: </h3>
 <li> Handles requests </li>
@@ -45,6 +51,5 @@ The idea behind my capstone is to allow sals reps to log in to their accounts, a
 <li> Cleaned up interface/little bit better mobile friendly </li>
 
 <h3> Back-End: </h3>
-<li> Rep ID attached to their individual customers (should be fairly simple) </li>
 <li> Payment processing </li>
 <li> Permissions for different employee hierarchy (IT, Payroll, HR, Sales, etc.) </li>
