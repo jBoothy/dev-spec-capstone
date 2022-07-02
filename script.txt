@@ -1,0 +1,34 @@
+Intro:
+
+Hello everyone, my name is John Booth and this is my specializations capstone! 
+I'm a former welding and carpentry shop foreman turned Web Developer and I wanted to 
+create a project that is rooted in a real world application that a company would use.
+
+Features:
+
+To start, we need to login to the site!
+
+Now, I'm really big into organization and having information easily accessible so the first step to doing that
+is to add a sales rep. **** Click add rep **** This is where we can add a rep to the company and their ID 
+will automatically apply to the new rep from the backend SQL. **** Submit the rep ****
+
+**** Click home ****
+
+We can check the reps that are currently in the system **** Click rep list **** and we can delete or edit the rep's information
+
+**** Click home ****
+
+Now that we have a new rep we can simulate them adding a customer **** Click add customer ****
+We can add in the customer's information to save it to the database **** Fill out customer info and submit ****
+
+**** Click home ****
+
+We can also the all of the customers in the database **** Click customer list **** where we can also edit or delete the customer's info
+**** Edit new customer ****
+Same as the reps, we can edit any of the information here as well as update the associated rep if need be **** Change and submit ****
+All of this is using the front end inputs that communicate with the backend logic to create, edit and remove information from our databases.
+
+**** Click home ****
+
+Those are the main features of my project for now! I really enjoyed learning more about setting up my own databases and being able to
+have all of my databases connected and working dynamically together to give the site a clean and smooth feel for the user!

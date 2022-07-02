@@ -15,21 +15,21 @@ app.use(express.static('../dist'));
 
 app.use(cors())
 // MAC
-const client = new Client({
-    host: "localhost",
-    user: "postgres",
-    port: 5432,
-    password: "jcb042915",
-    database: "postgres"
-})
-// PC
 // const client = new Client({
 //     host: "localhost",
 //     user: "postgres",
-//     port: 5151,
+//     port: 5432,
 //     password: "jcb042915",
 //     database: "postgres"
 // })
+// PC
+const client = new Client({
+    host: "localhost",
+    user: "postgres",
+    port: 5151,
+    password: "jcb042915",
+    database: "postgres"
+})
 
 client.connect();
 
